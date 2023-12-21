@@ -1,0 +1,85 @@
+/* Add your custom styling here */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1f3e4d;
+}
+
+.login-container {
+  text-align: center;
+}
+
+.login-form {
+  background-color: #4eb97b60;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 450px; /* Adjust container width */
+  margin: 0 auto; /* Center container horizontally */
+}
+
+.logo {
+  width: 150px; /* Adjust logo size */
+  margin-bottom: 10px; /* Reduced margin between logo and h1 */
+}
+
+h1 {
+  margin-bottom: 20px; /* Maintain margin for the heading */
+  color: #000000;
+}
+
+.form-group {
+  margin-bottom: 25px;
+  text-align: left; /* Align form group content to the left */
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #000000;
+}
+
+input[type="email"],
+input[type="password"] {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #0b16b693;
+  width: 100%; /* Fill container width */
+  font-size: 16px;
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.password-input {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888;
+}
+
+input[type="submit"] {
+  padding: 12px 20px;
+  background-color: #1f3e4d;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%; /* Fill container width */
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
