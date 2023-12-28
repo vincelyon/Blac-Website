@@ -9,7 +9,7 @@ from django.urls import reverse
 
 def categories(request):
     categories = Category.objects.all()
-    return render(request, 'categories.html', {'categories': categories})
+    return render(request, 'index.html', {'categories': categories})
 
 def category(request, category_name):
     category = Category.objects.get(name=category_name)
