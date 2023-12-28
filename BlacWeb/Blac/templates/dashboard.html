@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:#1f3e4d;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #0B5D80;
+            padding-top: 20px;
+            border-right: 1px solid #ddd;
+            
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: black;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #e9ecef;
+            color:blue;
+        }
+
+        .main-content {
+            margin-left: 250px; /* Adjust margin to accommodate the sidebar width */
+            padding-top: 50px;
+        }
+
+        .header {
+            background-color: #15D4D4B0;F;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="{% url 'manage_categories' %}" class="btn btn-outline-primary btn-block mb-2">Manage Categories</a>
+        <a href="{% url 'manage_items' %}" class="btn btn-outline-primary btn-block">Manage Items</a>
+    </div>
+
+    <!-- Main content -->
+    <div class="main-content">
+        <div class="header">
+            <h1>Welcome to Admin Dashboard</h1>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Overview</h3>
+                            <ul class="list-group">
+                                <li class="list-group-item">Total Categories: {{ total_categories }}</li>
+                                <li class="list-group-item">Total Items: {{ total_items }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JavaScript at the end of the body -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

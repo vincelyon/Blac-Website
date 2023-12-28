@@ -1,0 +1,22 @@
+<!-- manage_items.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Items</title>
+    <!-- Include Bootstrap or other CSS -->
+</head>
+<body>
+    <h1>Items</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Item</button>
+    </form>
+    <ul>
+        {% for item in items %}
+            <li>{{ item.name }} - {{ item.category.name }} -{{iem.image}} {{ item.price }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

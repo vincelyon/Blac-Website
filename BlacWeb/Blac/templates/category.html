@@ -1,0 +1,57 @@
+<!-- category.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ category_name }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Change the font family as needed */
+            margin: 0;
+            padding: 0;
+            background-color:#1f3e4d;
+            color:white;
+            margin-left:20px;
+            margin-righ:20px;
+        }
+        /* Style for category container */
+        .category-container {
+            display: flex; /* Use flexbox */
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
+            gap: 20px; /* Adjust the space between items */
+            justify-content: center; /* Center items horizontally */
+        }
+
+        /* Style for category item */
+        .category-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 200px; /* Adjust width as needed */
+            text-align: center;
+        }
+
+        /* Style for category image */
+        .category-image {
+            width: 200px; /* Set the desired width */
+            height: 200px; /* Set the desired height */
+            /* You can also add other styles like borders, etc. */
+        }
+
+        /* Style for category description */
+        .category-description {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ category_name }}</h1>
+    <div class="category-container">
+        {% for item in items %}
+            <div class="category-item">
+                <h2>{{ item.name }}</h2>
+                <img src="{{ item.image.url }}" alt="{{ item.name }}" class="category-image">
+                <p class="category-description">{{ item.description }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
