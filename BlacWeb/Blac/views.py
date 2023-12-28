@@ -7,7 +7,7 @@ from django.contrib import messages
 from django.urls import reverse
 
 
-def categories(request):
+def index(request):
     categories = Category.objects.all()
     return render(request, 'index.html', {'categories': categories})
 

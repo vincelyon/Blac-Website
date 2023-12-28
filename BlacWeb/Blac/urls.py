@@ -7,7 +7,7 @@ from django.conf import settings
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path('', views.categories, name='categories'),
+    path('', views.index, name='index'),
     path('category/<str:category_name>/', views.category, name='category'),
     path('login/', views.user_login, name='login'),
     path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
