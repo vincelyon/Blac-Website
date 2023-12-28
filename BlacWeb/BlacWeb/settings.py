@@ -75,16 +75,19 @@ WSGI_APPLICATION = 'BlacWeb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# settings.py
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'blac',
-        'USER': 'root',
-        'PASSWORD': 'manofGod',
-        'HOST': 'localhost', 
-        'PORT': '3306',      
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'DgC1CbBCFG2c2eeaEBbgf*AgggG*1DCf',
+        'HOST': 'roundhouse.proxy.rlwy.net',  # Set the host if PostgreSQL is running on a different machine
+        'PORT': '34248',       # Set the port to the one PostgreSQL is configured to listen on
     }
 }
+
 
 
 # Password validation
