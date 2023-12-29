@@ -7,3 +7,4 @@ psycopg2-binary==2.9.9
 sqlparse==0.4.2
 typing_extensions==4.8.0
 tzdata==2023.3
+pip install requests==2.6.0
