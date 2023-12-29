@@ -5,10 +5,24 @@ from django.contrib.auth import authenticate, login
 from .forms import CategoryForm, ItemForm
 from django.contrib import messages
 from django.urls import reverse
+import pyrebase
 
+# Initialize Firebase
+firebaseConfig = {
+  apiKey: "AIzaSyAITjBnmNzakwA4ihymPCog1oLamEO0_RA",
+  authDomain: "blac-69a47.firebaseapp.com",
+  databaseURL: "https://blac-69a47-default-rtdb.firebaseio.com",
+  projectId: "blac-69a47",
+  storageBucket: "blac-69a47.appspot.com",
+  messagingSenderId: "386156923266",
+  appId: "1:386156923266:web:2f1dcaa49d79013035279b"
+}
+
+firebase = pyrebase.initialize_app(firebaseConfig)
+db = firebase.database()
 
 def index(request):
-    categories = Category.objects.all()
+    categories = db.child("categories").get().val()
     return render(request, 'index.html', {'categories': categories})
 
 def category(request, category_name):
