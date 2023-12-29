@@ -12,9 +12,17 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import firebase_admin
+from firebase_admin import credentials
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+cred = credentials.Certificate('blac-69a47-firebase-adminsdk-9ww40-70267df95f.json')
+firebase_admin.initialize_app(cred, {
+    'databaseURL': 'https://blac-69a47-default-rtdb.firebaseio.com/'
+})
+
 
 
 # Quick-start development settings - unsuitable for production
