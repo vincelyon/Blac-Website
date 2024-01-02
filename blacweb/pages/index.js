@@ -1,3 +1,5 @@
+// Index.js
+
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
@@ -55,7 +57,6 @@ const Index = () => {
 
   return (
     <div>
-      {/* Navbar */}
       <nav style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#333', padding: '10px 20px', color: '#fff', height: '50px' }}>
         <div style={{ marginRight: 'auto' }}>
           <img src="images/icon.png" alt="Logo" style={{ width: '100px', height: 'auto' }} />
@@ -68,7 +69,6 @@ const Index = () => {
         </ul>
       </nav>
 
-      {/* Welcome container */}
       <div style={{ backgroundColor: 'lightblue', padding: '20px', textAlign: 'center', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: 'Arial, sans-serif' }}>
         <div style={{ flex: '1', textAlign: 'center' }}>
           <img src="images/image2.jpg" alt="Side Image 2" style={{ width: '250px', height: 'auto', borderRadius: '8px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }} />
@@ -82,31 +82,28 @@ const Index = () => {
         </div>
       </div>
 
-{/* Category and other content */}
-<div style={{ marginTop: '2px' }}>
-  <h2 style={{ textAlign: 'center', fontSize: '24px' }}>Categories</h2>
-  <div style={{ display: 'flex', overflowX: 'auto', padding: '10px', borderRadius: '10px', backgroundColor: '#52BE80', justifyContent: 'center' }}>
-    {categories.map((category) => (
-      <div
-        key={category.id}
-        style={{ padding: '10px', border: '1px solid #ccc', borderRadius: '8px', margin: '5px', cursor: 'pointer', transition: 'transform 0.3s ease-in-out' }}
-        onClick={() => handleCategoryClick(category.id, category.name)}
-      >
-        {category.imageUrl && (
-          <img
-            src={category.imageUrl}
-            alt={category.name}
-            style={{ width: '200px', height: '200px', objectFit: 'cover', borderRadius: '5px' }}
-          />
-        )}
-        <p style={{ fontSize: '16px', fontWeight: 'bold', marginTop: '5px' }}>{category.name}</p>
+      <div style={{ marginTop: '2px' }}>
+        <h2 style={{ textAlign: 'center', fontSize: '24px' }}>Categories</h2>
+        <div style={{ display: 'flex', overflowX: 'auto', padding: '10px', borderRadius: '10px', backgroundColor: '#52BE80', justifyContent: 'center' }}>
+          {categories.map((category) => (
+            <div
+              key={category.id}
+              style={{ padding: '10px', border: '1px solid #ccc', borderRadius: '8px', margin: '5px', cursor: 'pointer', transition: 'transform 0.3s ease-in-out' }}
+              onClick={() => handleCategoryClick(category.id, category.name)}
+            >
+              {category.imageUrl && (
+                <img
+                  src={category.imageUrl}
+                  alt={category.name}
+                  style={{ width: '200px', height: '200px', objectFit: 'cover', borderRadius: '5px' }}
+                />
+              )}
+              <p style={{ fontSize: '16px', fontWeight: 'bold', marginTop: '5px' }}>{category.name}</p>
+            </div>
+          ))}
+        </div>
       </div>
-    ))}
-  </div>
-</div>
 
-
-      {/* CategoryPage component */}
       {selectedCategory && (
         <CategoryPage
           categoryName={selectedCategory.categoryName}
@@ -114,36 +111,33 @@ const Index = () => {
         />
       )}
 
-{/* Footer */}
-<footer style={{ backgroundColor: '#52BE80', color: '#000', padding: '20px', textAlign: 'center', marginTop: '30px', fontFamily: 'Arial, sans-serif', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
-  <div>
-    <img src="images/icon.png" alt="Logo" style={{ width: '100px', height: 'auto' }} />
-  </div>
-  <div style={{ flex: '2', textAlign: 'center' }}>
-    <h3 style={{ fontSize: '20px', marginBottom: '5px', color: '#000' }}>BLAC!</h3>
-    <p style={{ fontSize: '14px', marginBottom: '5px', color: '#000' }}>Your ultimate fashion destination</p>
-  </div>
-  <div style={{ flex: '2', textAlign: 'center', color: '#000' }}>
-    <h2 style={{ fontSize: '14px', marginBottom: '10px' }}>For more information, contact us by pressing the button below:</h2>
-    <button style={{ fontSize: '14px', padding: '8px 16px', backgroundColor: '#92E2B6', color: '#333', border: 'none', cursor: 'pointer', borderRadius: '5px' }}>Contact Us</button>
-  </div>
-  <div style={{ flex: '1', textAlign: 'right' }}>
-    <h3 style={{ fontSize: '14px', marginBottom: '5px', color: '#000', textAlign: 'right' }}>Follow Us On:</h3>
-    <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-      <a href="#facebook" style={{ textDecoration: 'none', color: '#043A63', marginRight: '10px' }}>
-        <FontAwesomeIcon icon={faFacebook} style={{ fontSize: '20px' }} />
-      </a>
-      <a href="#twitter" style={{ textDecoration: 'none', color: '#043A63', marginRight: '10px' }}>
-        <FontAwesomeIcon icon={faTwitter} style={{ fontSize: '20px' }} />
-      </a>
-      <a href="#instagram" style={{ textDecoration: 'none', color: '#043A63' }}>
-        <FontAwesomeIcon icon={faInstagram} style={{ fontSize: '20px' }} />
-      </a>
-    </div>
-  </div>
-</footer>
-
-
+      <footer style={{ backgroundColor: '#52BE80', color: '#000', padding: '20px', textAlign: 'center', marginTop: '30px', fontFamily: 'Arial, sans-serif', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
+        <div>
+          <img src="images/icon.png" alt="Logo" style={{ width: '100px', height: 'auto' }} />
+        </div>
+        <div style={{ flex: '2', textAlign: 'center' }}>
+          <h3 style={{ fontSize: '20px', marginBottom: '5px', color: '#000' }}>BLAC!</h3>
+          <p style={{ fontSize: '14px', marginBottom: '5px', color: '#000' }}>Your ultimate fashion destination</p>
+        </div>
+        <div style={{ flex: '2', textAlign: 'center', color: '#000' }}>
+          <h2 style={{ fontSize: '14px', marginBottom: '10px' }}>For more information, contact us by pressing the button below:</h2>
+          <button style={{ fontSize: '14px', padding: '8px 16px', backgroundColor: '#92E2B6', color: '#333', border: 'none', cursor: 'pointer', borderRadius: '5px' }}>Contact Us</button>
+        </div>
+        <div style={{ flex: '1', textAlign: 'right' }}>
+          <h3 style={{ fontSize: '14px', marginBottom: '5px', color: '#000', textAlign: 'right' }}>Follow Us On:</h3>
+          <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+            <a href="#facebook" style={{ textDecoration: 'none', color: '#043A63', marginRight: '10px' }}>
+              <FontAwesomeIcon icon={faFacebook} style={{ fontSize: '20px' }} />
+            </a>
+            <a href="#twitter" style={{ textDecoration: 'none', color: '#043A63', marginRight: '10px' }}>
+              <FontAwesomeIcon icon={faTwitter} style={{ fontSize: '20px' }} />
+            </a>
+            <a href="#instagram" style={{ textDecoration: 'none', color: '#043A63' }}>
+              <FontAwesomeIcon icon={faInstagram} style={{ fontSize: '20px' }} />
+            </a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };

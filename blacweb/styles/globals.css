@@ -1,0 +1,98 @@
+/* For smaller screens like mobile devices */
+@media (max-width: 768px) {
+    /* Adjust styles for smaller screens */
+    nav {
+      padding: 10px 15px; /* Adjust padding for the navigation */
+    }
+  
+    img {
+      width: 80px; /* Adjust logo size */
+    }
+  
+    h1 {
+      font-size: 28px; /* Adjust the heading font size */
+    }
+  
+    ul {
+      flex-direction: column; /* Display navigation items vertically */
+      align-items: flex-end; /* Align navigation items to the right */
+    }
+  
+    .welcome-container {
+      padding: 15px; /* Adjust padding for the welcome container */
+    }
+  
+    /* Adjust styles for category items */
+    .category-container {
+      padding: 5px; /* Adjust padding for the category container */
+    }
+  
+    /* Adjust styles for the footer */
+    .footer {
+      padding: 15px; /* Adjust padding for the footer */
+    }
+  
+    .footer button {
+      padding: 8px 12px; /* Adjust button padding */
+      font-size: 12px; /* Adjust button font size */
+    }
+  }
+  
+  
+  
+  /* For tablets */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    /* Adjust styles for tablets */
+    .category-container {
+      justify-content: space-between; /* Example: Adjust layout */
+    }
+  
+    h2 {
+      font-size: 20px; /* Example: Adjust font size */
+    }
+  
+    /* Example adjustments for footer */
+    .footer {
+      padding: 20px; /* Adjust padding for the footer */
+    }
+  
+    .footer button {
+      padding: 10px 16px; /* Adjust button padding */
+      font-size: 14px; /* Adjust button font size */
+    }
+  }
+  
+  
+  /* For larger screens like desktops */
+  @media (min-width: 1025px) {
+    /* Adjust styles for larger screens */
+    .category-container {
+      display: flex; /* Adjust layout to flex */
+      flex-wrap: wrap; /* Enable wrapping for flexibility */
+      justify-content: space-around; /* Example: Adjust spacing between items */
+    }
+  
+    .category-item {
+      width: 30%; /* Example: Adjust item width */
+      /* Other styles for category items */
+    }
+  
+    h2 {
+      font-size: 28px; /* Example: Increase font size */
+    }
+  
+    .welcome-container {
+      padding: 40px; /* Example: Increase padding for welcome container */
+    }
+  
+    .footer {
+      display: flex; /* Adjust footer layout to flex */
+      justify-content: space-between; /* Example: Space items evenly */
+      align-items: center; /* Align items vertically */
+    }
+  
+    .footer button {
+      padding: 12px 24px; /* Example: Adjust button padding */
+      font-size: 16px; /* Example: Increase button font size */
+    }
+  }

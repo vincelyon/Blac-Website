@@ -72,7 +72,7 @@ const AddItem = () => {
 
   return (
     <div style={{ width: '70%', margin: '0 auto', padding: '20px', border: '1px solid #ccc', borderRadius: '8px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}>
-      <h2 style={{ marginBottom: '20px' }}>Add Item</h2>
+            <h1 className="text-5xl font-bold m-10">Add A New Item</h1>
       <form onSubmit={handleItemSubmit}>
         <label style={{ display: 'block', marginBottom: '5px' }} htmlFor="category">Select Category</label>
         <select

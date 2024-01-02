@@ -56,7 +56,7 @@ const AddCategory = () => {
 
   return (
     <main style={{ textAlign: 'center', padding: '20px' }}>
-      <h1 className="text-5xl font-bold m-10">Add Data To Firestore Database</h1>
+      <h1 className="text-5xl font-bold m-10">Add A New Category</h1>
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <label htmlFor="categoryName" style={{ marginBottom: '10px' }}>Category Name</label>
         <input
