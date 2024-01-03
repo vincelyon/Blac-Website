@@ -1,4 +1,42 @@
-/* For smaller screens like mobile devices */
+/* For smaller screens like mobile devices (320px width) */
+@media (max-width: 320px) {
+    /* Adjust styles for smaller screens */
+    nav {
+      padding: 8px 12px; /* Adjust padding for the navigation */
+    }
+  
+    img {
+      width: 60px; /* Adjust logo size */
+    }
+  
+    h1 {
+      font-size: 24px; /* Adjust the heading font size */
+    }
+  
+    ul {
+      flex-direction: column; /* Display navigation items vertically */
+      align-items: flex-start; /* Align navigation items to the left */
+    }
+  
+    .welcome-container {
+      padding: 10px; /* Adjust padding for the welcome container */
+    }
+  
+    /* Adjust styles for category items */
+    .category-container {
+      padding: 3px; /* Adjust padding for the category container */
+    }
+  
+    /* Adjust styles for the footer */
+    .footer {
+      padding: 10px; /* Adjust padding for the footer */
+    }
+  
+    .footer button {
+      padding: 6px 10px; /* Adjust button padding */
+      font-size: 10px; /* Adjust button font size */
+    }
+  }/* For smaller screens like mobile devices */
 @media (max-width: 768px) {
     /* Adjust styles for smaller screens */
     nav {
