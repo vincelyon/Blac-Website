@@ -58,7 +58,7 @@ const AdminDashboard = () => {
   };
 
   const handleAddItem = () => {
-    router.push('/AddItem');
+    router.push('/Additem');
   };
 
   const handleRemoveItem = () => {

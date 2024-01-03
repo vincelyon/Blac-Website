@@ -55,7 +55,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100" style={ {backgroundColor: '#B1F8A7'}}>
 <Navbar/>
   <div style={{ backgroundColor: 'lightblue', padding: '20px', textAlign: 'center', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: 'Arial, sans-serif' }}>
   <div style={{ flex: '20%', textAlign: 'center', maxWidth: '40%' }}>
@@ -77,14 +77,14 @@ const Index = () => {
     {categories.map((category) => (
       <div
         key={category.id}
-        style={{ padding: '10px', border: '1px solid #ccc', borderRadius: '8px', margin: '5px', cursor: 'pointer', transition: 'transform 0.3s ease-in-out' }}
+        style={{ padding: '10px', borderRadius: '8px', margin: '5px', cursor: 'pointer', transition: 'transform 0.3s ease-in-out'}}
         onClick={() => handleCategoryClick(category.id, category.name)}
       >
         {category.imageUrl && (
           <img
             src={category.imageUrl}
             alt={category.name}
-            style={{ width: '100%', height: '50%', objectFit: 'cover', borderRadius: '5px' }}
+            style={{ width: '100%', height: '50%', objectFit: 'cover', borderRadius: '5px', }}
           />
         )}
         <p style={{ fontSize: '16px', fontWeight: 'bold', marginTop: '5px', textAlign: 'center' }}>{category.name}</p>
