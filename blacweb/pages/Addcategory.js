@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import db from '../utils/firebaseconfig';
 import { collection, addDoc } from 'firebase/firestore';
+import withAuth from '../utils/withAuth';
 
 async function addDataToFirestore(name, imageUrl) {
   try {
@@ -92,4 +93,4 @@ const AddCategory = () => {
   );
 };
 
-export default AddCategory;
+export default withAuth(AddCategory);

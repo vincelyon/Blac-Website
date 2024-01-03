@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import db from '../utils/firebaseconfig';
+import { db } from '../utils/firebaseconfig';
 import { collection, getDocs } from 'firebase/firestore';
 import Navbar from "../components/Navbar"
 

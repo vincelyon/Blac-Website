@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import db from '../utils/firebaseconfig';
 import { collection, getDocs, doc, addDoc } from 'firebase/firestore';
+import withAuth from '../utils/withAuth';
 
 const AddItem = () => {
   const [categories, setCategories] = useState([]);
@@ -130,4 +131,4 @@ const AddItem = () => {
   );
 };
 
-export default AddItem;
+export default withAuth(AddItem);

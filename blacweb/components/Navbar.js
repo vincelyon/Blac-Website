@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -23,6 +24,19 @@ const Navbar = () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
+
+  const listItemStyle = {
+    marginBottom: '10px',
+    padding: '8px 20px',
+    cursor: 'pointer',
+    color: '#fff',
+    textDecoration: 'none'
+  };
+
+  const listItemHoverStyle = {
+    ...listItemStyle,
+    backgroundColor: '#2C3E50'
+  };
 
   return (
     <div style={{ position: 'relative' }}>
@@ -58,10 +72,26 @@ const Navbar = () => {
                 zIndex: 1000,
               }}
             >
-              <li style={{ marginBottom: '10px', padding: '8px 20px', borderBottom: '1px solid #2C3E50' }}>Home</li>
-              <li style={{ marginBottom: '10px', padding: '8px 20px', borderBottom: '1px solid #2C3E50' }}>About Us</li>
-              <li style={{ marginBottom: '10px', padding: '8px 20px', borderBottom: '1px solid #2C3E50' }}>Contact Us</li>
-              <li style={{ marginBottom: '10px', padding: '8px 20px' }}>Login</li>
+              <li style={listItemStyle}>
+                <Link href="/">
+                  <b style={listItemStyle}>Home</b>
+                </Link>
+              </li>
+              <li style={listItemStyle}>
+                <Link href="/about">
+                  <b style={listItemStyle}>About Us</b>
+                </Link>
+              </li>
+              <li style={listItemStyle}>
+                <Link href="/contact">
+                  <b style={listItemStyle}>Contact Us</b>
+                </Link>
+              </li>
+              <li style={listItemStyle}>
+                <Link href="/login">
+                  <b style={listItemStyle}>Login</b>
+                </Link>
+              </li>
             </ul>
           )}
         </div>
