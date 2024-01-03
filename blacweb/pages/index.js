@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import db from '../utils/firebaseconfig';
 import { collection, getDocs } from 'firebase/firestore';
+import './styles.css';
 
 const Index = () => {
   const [categories, setCategories] = useState([]);
