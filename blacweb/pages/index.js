@@ -72,9 +72,9 @@ const Index = () => {
   <div style={{ flex: '20%', textAlign: 'center', maxWidth: '40%' }}>
     <img src="images/image2.jpg" alt="Side Image 2" style={{ width: '100%', maxWidth: '250px', height: 'auto', borderRadius: '8px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }} />
   </div>
-  <div style={{ flex: '60%', textAlign: 'center', maxWidth: '60%' }}>
-    <h1 style={{ fontSize: '35px', margin: '0', marginBottom: '10px', fontWeight: 'bolder' }}>WELCOME TO BLAC!</h1>
-    <h2 style={{ fontSize: '22px', margin: '0', marginBottom: '10px' }}>THE RIGHT TRIB</h2>
+  <div style={{ flex: '50%', textAlign: 'center', maxWidth: '50%' }}>
+    <h1 style={{ fontSize: '25px', margin: '0', marginBottom: '10px', fontWeight: 'bolder' }}>WELCOME TO BLAC!</h1>
+    <h2 style={{ fontSize: '12px', margin: '0', marginBottom: '10px' }}>THE RIGHT TRIB</h2>
   </div>
   <div style={{ flex: '20%', textAlign: 'center', maxWidth: '40%' }}>
     <img src="images/image1.jpg" alt="Side Image 1" style={{ width: '100%', maxWidth: '250px', height: 'auto', borderRadius: '8px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }} />
