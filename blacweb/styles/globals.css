@@ -2,8 +2,7 @@
 @media (max-width: 320px) {
     /* Adjust styles for smaller screens */
     nav {
-      padding: 8px 12px;
-      width:100% /* Adjust padding for the navigation */
+      width:100%;
     }
   
     img {
