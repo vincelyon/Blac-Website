@@ -101,7 +101,7 @@ const Index = () => {
         />
       )}
 
-<footer style={{ backgroundColor: '#52BE80', color: '#000', padding: '20px', textAlign: 'center', marginTop: '30px', fontFamily: 'Arial, sans-serif', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
+<footer style={{ backgroundColor: '#34495E', color: '#000', padding: '20px', textAlign: 'center', marginTop: '30px', fontFamily: 'Arial, sans-serif', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
 
   <div style={{ flex: '1 1 100%', marginBottom: '20px' }}>
     <img src="images/icon.png" alt="Logo" style={{ width: '100px', height: 'auto' }} />
@@ -120,13 +120,13 @@ const Index = () => {
   <div style={{ flex: '1 1 100%', textAlign: 'center' }}>
     <h3 style={{ fontSize: '14px', marginBottom: '5px', color: '#000', textAlign: 'center' }}>Follow Us On:</h3>
     <div style={{ display: 'flex', justifyContent: 'center' }}> {/* Center align the social icons */}
-      <a href="#facebook" style={{ textDecoration: 'none', color: '#043A63', marginRight: '10px' }}>
+      <a href="#facebook" style={{ textDecoration: 'none', color: '#EFEFF0', marginRight: '10px' }}>
         <FontAwesomeIcon icon={faFacebook} style={{ fontSize: '20px' }} />
       </a>
-      <a href="#twitter" style={{ textDecoration: 'none', color: '#043A63', marginRight: '10px' }}>
+      <a href="#twitter" style={{ textDecoration: 'none', color: '#FFFFFF', marginRight: '10px' }}>
         <FontAwesomeIcon icon={faTwitter} style={{ fontSize: '20px' }} />
       </a>
-      <a href="#instagram" style={{ textDecoration: 'none', color: '#043A63' }}>
+      <a href="#instagram" style={{ textDecoration: 'none', color: '#FFFFFF' }}>
         <FontAwesomeIcon icon={faInstagram} style={{ fontSize: '20px' }} />
       </a>
     </div>
