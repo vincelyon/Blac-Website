@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import db from '../utils/firebaseconfig';
 import { collection, getDocs } from 'firebase/firestore';
+import Navbar from "../components/Navbar"
 
 const Index = () => {
   const [categories, setCategories] = useState([]);
@@ -55,19 +56,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-<nav style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#333', padding: '10px 20px', color: '#fff', height: '50px' }}>
-  <div style={{ marginRight: 'auto' }}>
-    <img src="images/icon.png" alt="Logo" style={{ width: '100px', height: 'auto' }} />
-  </div>
-  <ul style={{ listStyle: 'none', display: 'flex', margin: '0' }}>
-    <li style={{ marginLeft: '20px', cursor: 'pointer', '@media (max-width: 768px)': { marginLeft: '10px' } }}>Home</li>
-    <li style={{ marginLeft: '20px', cursor: 'pointer', '@media (max-width: 768px)': { marginLeft: '10px' } }}>About Us</li>
-    <li style={{ marginLeft: '20px', cursor: 'pointer', '@media (max-width: 768px)': { marginLeft: '10px' } }}>Contact Us</li>
-    <li style={{ marginLeft: '20px', cursor: 'pointer', '@media (max-width: 768px)': { marginLeft: '10px' } }}>Login</li>
-  </ul>
-</nav>
-
-
+<Navbar/>
   <div style={{ backgroundColor: 'lightblue', padding: '20px', textAlign: 'center', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: 'Arial, sans-serif' }}>
   <div style={{ flex: '20%', textAlign: 'center', maxWidth: '40%' }}>
     <img src="images/image2.jpg" alt="Side Image 2" style={{ width: '100%', maxWidth: '250px', height: 'auto', borderRadius: '8px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }} />
