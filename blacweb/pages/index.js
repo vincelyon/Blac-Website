@@ -103,11 +103,11 @@ const Index = () => {
 
 <footer style={{ backgroundColor: '#34495E', color: '#000', padding: '20px', textAlign: 'center', marginTop: '30px', fontFamily: 'Arial, sans-serif', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
 
-  <div style={{ flex: '1 1 100%', marginBottom: '20px' }}>
+  <div style={{ flex: '1 1 100%', marginBottom: '0px' }}>
     <img src="images/icon.png" alt="Logo" style={{ width: '100px', height: 'auto' }} />
   </div>
 
-  <div style={{ flex: '1 1 100%', textAlign: 'center', marginBottom: '20px' }}>
+  <div style={{ flex: '1 1 100%', textAlign: 'center', marginBottom: '20px', marginTop:'-20px'}}>
     <h3 style={{ fontSize: '20px', marginBottom: '5px', color: '#000' }}>BLAC!</h3>
     <p style={{ fontSize: '14px', marginBottom: '5px', color: '#000' }}>Your ultimate fashion destination</p>
   </div>
