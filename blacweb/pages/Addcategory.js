@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import db from '../utils/firebaseconfig';
+import { db } from '../utils/firebaseconfig';
 import { collection, addDoc } from 'firebase/firestore';
 import withAuth from '../utils/withAuth';
 
