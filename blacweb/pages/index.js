@@ -55,7 +55,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black" style={{backgroundColor:'#291F1F57'}}>
+    <div className="min-h-screen bg-black" style={{backgroundColor:'#92928E'}}>
       <Navbar />
       <div style={{ 
   color: 'white', 
@@ -101,7 +101,7 @@ const Index = () => {
       scrollbarWidth: 'none', /* Hide scrollbar */
       WebkitOverflowScrolling: 'touch', /* Smooth scrolling for iOS */
       flexWrap: 'wrap', /* Allow items to wrap on smaller screens */
-      '@media screen and (max-width: 768px)': {
+      '@media screen and (maxWidth: 768px)': { // <-- Media query removed from here
         flexDirection: 'row',
         overflowX: 'auto',
       }
@@ -117,7 +117,7 @@ const Index = () => {
             transition: 'transform 0.3s ease-in-out',
             flex: '0 0 150px', /* Adjust the width according to your need */
             maxWidth: '200px', /* Set maximum width if necessary */
-            '@media screen and (max-width: 768px)': {
+            '@media screen and (maxWidth: 768px)': { // <-- Media query removed from here
               flex: '0 0 100px', /* Adjust width for smaller screens */
               maxWidth: '150px', /* Max width for smaller screens */
             }
@@ -203,12 +203,12 @@ const CategoryPage = ({ categoryName, items }) => {
         {items.map((item) => (
           <div key={item.id} style={{ marginBottom: '20px', padding: '20px', border: '1px solid #ccc', borderRadius: '8px', backgroundColor: '#424442', flex: '0 0 calc(33.33% - 20px)', margin: '10px', minWidth: '250px' }}>
             <h3>{item.itemName}</h3>
-            <p style={{color:'white'}}><strong>C a t e g o r y:</strong> {item.categoryName}</p>
+            <p style={{color:'white'}}><strong>Category:</strong> {item.categoryName}</p>
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <img src={item.itemImage} alt={item.itemName} style={{ width: '100px', height: '100px', borderRadius: '5px', marginRight: '20px' }} />
               <div>
-                <p><strong>D e s c r i p t i o n:</strong> {item.itemDescription}</p>
-                <p><strong>P r i c e:</strong> K{item.itemPrice}</p>
+                <p><strong>Description:</strong> {item.itemDescription}</p>
+                <p><strong>Price:</strong> K{item.itemPrice}</p>
               </div>
             </div>
           </div>
