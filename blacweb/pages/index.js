@@ -91,7 +91,7 @@ const Index = () => {
       textAlign: 'center',
       fontSize: '24px',
       fontFamily: 'Arial, sans-serif',
-      color:'#070000FD'
+      color:'#A00000FD'
     }}><b>C A T E G O R I E S</b></h2>
     <div style={{
       display: 'flex',
@@ -159,7 +159,7 @@ const Index = () => {
           <p style={{ fontSize: '14px', marginBottom: '5px', color: 'black' }}><b>THE RIGHT TRIB </b></p>
         </div>
         <div style={{ flex: '1 1 100%', textAlign: 'center', marginBottom: '20px' }}>
-          <h2 style={{ fontSize: '14px', marginBottom: '10px', color:'blac' }}>For more information, contact us by pressing the button below:</h2>
+          <h2 style={{ fontSize: '14px', marginBottom: '10px', color:'black' }}>For more information, contact us by pressing the button below:</h2>
           <button style={{ fontSize: '14px', padding: '8px 16px', backgroundColor: '#0A194B52', color: 'white', border: 'none', cursor: 'pointer', borderRadius: '5px' }}>Contact Us</button>
         </div>
         <div style={{ flex: '1 1 100%', textAlign: 'center' }}>

@@ -30,12 +30,19 @@ const Navbar = () => {
     padding: '8px 20px',
     cursor: 'pointer',
     color: '#fff',
-    textDecoration: 'none'
+    textDecoration: 'none',
+    transition: 'background-color 0.3s ease-in-out, transform 0.3s ease-in-out',
+    borderRadius: '5px',
+    fontFamily: 'Arial, sans-serif',
+    fontSize: '16px',
+    fontWeight: 'bold',
+    letterSpacing: '0.5px',
   };
 
   const listItemHoverStyle = {
     ...listItemStyle,
-    backgroundColor: '#2C3E50'
+    backgroundColor: '#2C3E50',
+    transform: 'scale(1.05)',
   };
 
   return (
@@ -70,6 +77,7 @@ const Navbar = () => {
                 transform: `scaleY(${showMenu ? '1' : '0'})`,
                 transition: 'transform 0.3s ease-in-out, opacity 0.3s ease-in-out',
                 zIndex: 1000,
+                visibility: showMenu ? 'visible' : 'hidden',
               }}
             >
               <li style={listItemStyle}>
