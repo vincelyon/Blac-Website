@@ -55,42 +55,92 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black" style={{ backgroundColor: '#92928E' }}>
+    <div className="min-h-screen bg-black" style={{backgroundColor:'#291F1F57'}}>
       <Navbar />
-      <div style={{ color: 'white', backgroundColor: '#424442', padding: '20px', textAlign: 'center', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: 'Arial, sans-serif' }}>
+      <div style={{ 
+  color: 'white', 
+  backgroundImage: "url('/images/hi.jpg')",
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+  padding: '20px', 
+  textAlign: 'center', 
+  display: 'flex', 
+  justifyContent: 'space-between', 
+  alignItems: 'center', 
+  fontFamily: 'Arial, sans-serif' 
+}}>
         <div style={{ flex: '20%', textAlign: 'center', maxWidth: '40%' }}>
-          <img src="images/image2.jpg" alt="Side Image 2" style={{ width: '100%', maxWidth: '250px', height: 'auto', borderRadius: '8px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }} />
+          <img src="images/a.jpeg" alt="Side Image 2" style={{ width: '100%', maxWidth: '250px', height: '100%', borderRadius: '8px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }} />
         </div>
-        <div style={{ flex: '50%', textAlign: 'center', maxWidth: '50%' }}>
+        <div style={{ flex: '50%', textAlign: 'center', maxWidth: '40%', backgroundColor:'#38383870', padding:'20px', borderRadius:'10px'}}>
           <h1 style={{ fontSize: '25px', margin: '0', marginBottom: '10px', fontWeight: 'bolder' }}>WELCOME TO BLAC!</h1>
-          <h2 style={{ fontSize: '12px', margin: '0', marginBottom: '10px' }}>THE RIGHT TRIB</h2>
-        </div>
-        <div style={{ flex: '20%', textAlign: 'center', maxWidth: '40%' }}>
-          <img src="images/image1.jpg" alt="Side Image 1" style={{ width: '100%', maxWidth: '250px', height: 'auto', borderRadius: '8px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }} />
+          <h2 style={{ fontSize: '15px', margin: '0', marginBottom: '10px' }}>THE RIGHT TRIB</h2>
         </div>
       </div>
 
-      <div style={{ marginTop: '20px', height: 'fit-content' }}>
-        <h2 style={{ textAlign: 'center', fontSize: '24px', color:'white' }}>Categories</h2>
-        <div style={{ display: 'flex', overflowX: 'auto', padding: '10px', borderRadius: '10px', backgroundColor: '#424442', justifyContent: 'center' }}>
-          {categories.map((category) => (
-            <div
-              key={category.id}
-              style={{ padding: '10px', borderRadius: '8px', margin: '5px', cursor: 'pointer', transition: 'transform 0.3s ease-in-out' }}
-              onClick={() => handleCategoryClick(category.id, category.name)}
-            >
-              {category.imageUrl && (
-                <img
-                  src={category.imageUrl}
-                  alt={category.name}
-                  style={{ width: '100%', height: '50%', objectFit: 'cover', borderRadius: '5px' }}
-                />
-              )}
-              <p style={{ fontSize: '16px', fontWeight: 'bold', marginTop: '5px', textAlign: 'center' }}>{category.name}</p>
-            </div>
-          ))}
+      <div style={{
+  marginTop: '40px',
+  height: 'fit-content',
+  backgroundImage: "url('/images/4.jpg')",
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+  color: 'white'
+}}>
+  <div style={{ backgroundColor: '#92928E6E', padding: '20px' }}>
+    <h2 style={{
+      textAlign: 'center',
+      fontSize: '24px',
+      fontFamily: 'Arial, sans-serif'
+    }}>C A T E G O R I E S</h2>
+    <div style={{
+      display: 'flex',
+      overflowX: 'auto',
+      padding: '10px',
+      borderRadius: '10px',
+      justifyContent: 'center',
+      scrollbarWidth: 'none', /* Hide scrollbar */
+      WebkitOverflowScrolling: 'touch', /* Smooth scrolling for iOS */
+      flexWrap: 'wrap', /* Allow items to wrap on smaller screens */
+      '@media screen and (max-width: 768px)': {
+        flexDirection: 'row',
+        overflowX: 'auto',
+      }
+    }}>
+      {categories.map((category) => (
+        <div
+          key={category.id}
+          style={{
+            padding: '10px',
+            borderRadius: '8px',
+            margin: '5px',
+            cursor: 'pointer',
+            transition: 'transform 0.3s ease-in-out',
+            flex: '0 0 150px', /* Adjust the width according to your need */
+            maxWidth: '200px', /* Set maximum width if necessary */
+            '@media screen and (max-width: 768px)': {
+              flex: '0 0 100px', /* Adjust width for smaller screens */
+              maxWidth: '150px', /* Max width for smaller screens */
+            }
+          }}
+          onClick={() => handleCategoryClick(category.id, category.name)}
+        >
+          <p style={{
+            fontSize: '16px',
+            fontWeight: 'bold',
+            marginTop: '5px',
+            textAlign: 'center',
+            backgroundColor: 'black',
+            padding: '20px',
+            whiteSpace: 'nowrap', /* Prevent wrapping of text */
+            overflow: 'hidden',
+            textOverflow: 'ellipsis' /* Show ellipsis for long text */
+          }}>{category.name}</p>
         </div>
-      </div>
+      ))}
+    </div>
+  </div>
+</div>
+
 
       {selectedCategory && (
         <CategoryPage
@@ -114,13 +164,13 @@ const Index = () => {
         <div style={{ flex: '1 1 100%', textAlign: 'center' }}>
           <h3 style={{ fontSize: '14px', marginBottom: '5px', color: 'black', textAlign: 'center' }}>Follow Us On:</h3>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <a href="#facebook" style={{ textDecoration: 'none', color: '#EFEFF0', marginRight: '10px' }}>
+            <a href="https://www.facebook.com/blactherighttribe?mibextid=LQQJ4d" style={{ textDecoration: 'none', color: '#EFEFF0', marginRight: '10px' }}>
               <FontAwesomeIcon icon={faFacebook} style={{ fontSize: '20px' }} />
             </a>
-            <a href="#twitter" style={{ textDecoration: 'none', color: '#FFFFFF', marginRight: '10px' }}>
+            <a href="https://twitter.com/blac_tribe/status/1742629874597028327?s=20" style={{ textDecoration: 'none', color: '#FFFFFF', marginRight: '10px' }}>
               <FontAwesomeIcon icon={faTwitter} style={{ fontSize: '20px' }} />
             </a>
-            <a href="#instagram" style={{ textDecoration: 'none', color: '#FFFFFF' }}>
+            <a href="https://www.instagram.com/blac_therighttribe/?igsh=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr" style={{ textDecoration: 'none', color: '#FFFFFF' }}>
               <FontAwesomeIcon icon={faInstagram} style={{ fontSize: '20px' }} />
             </a>
           </div>
@@ -153,12 +203,12 @@ const CategoryPage = ({ categoryName, items }) => {
         {items.map((item) => (
           <div key={item.id} style={{ marginBottom: '20px', padding: '20px', border: '1px solid #ccc', borderRadius: '8px', backgroundColor: '#424442', flex: '0 0 calc(33.33% - 20px)', margin: '10px', minWidth: '250px' }}>
             <h3>{item.itemName}</h3>
-            <p style={{color:'white'}}><strong>Category:</strong> {item.categoryName}</p>
+            <p style={{color:'white'}}><strong>C a t e g o r y:</strong> {item.categoryName}</p>
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <img src={item.itemImage} alt={item.itemName} style={{ width: '100px', height: '100px', borderRadius: '5px', marginRight: '20px' }} />
               <div>
-                <p><strong>Description:</strong> {item.itemDescription}</p>
-                <p><strong>Price:</strong> K{item.itemPrice}</p>
+                <p><strong>D e s c r i p t i o n:</strong> {item.itemDescription}</p>
+                <p><strong>P r i c e:</strong> K{item.itemPrice}</p>
               </div>
             </div>
           </div>
