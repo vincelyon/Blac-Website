@@ -42,9 +42,9 @@ const Login = () => {
   return (
     <div>
        <Navbar/>
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', backgroundColor: '#DBFDD6' }}>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', backgroundColor: '#464746' }}>
      
-      <div style={{ width: '300px', textAlign: 'center', padding: '20px', border: '2px solid #ccc', borderRadius: '5px', backgroundColor: '#8DEE80' }}>
+      <div style={{ width: '300px', textAlign: 'center', padding: '20px', border: '2px solid #ccc', borderRadius: '5px', backgroundColor: '#92928E' }}>
         <img
           src="images/icon.png" // Replace with your logo URL or path
           alt="Logo"

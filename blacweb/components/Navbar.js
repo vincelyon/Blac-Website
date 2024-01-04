@@ -40,7 +40,7 @@ const Navbar = () => {
 
   return (
     <div style={{ position: 'relative' }}>
-      <nav style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#2C3E50', padding: '10px 20px', color: '#fff', height: '50px' }}>
+      <nav style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#92928E', padding: '10px 20px', color: '#fff', height: '50px' }}>
         <div>
           <img src="images/icon.png" alt="Logo" style={{ width: '100px', height: 'auto' }} />
         </div>
@@ -56,7 +56,7 @@ const Navbar = () => {
               ref={menuRef}
               style={{
                 listStyle: 'none',
-                backgroundColor: '#34495E',
+                backgroundColor: '#92928E',
                 padding: '0',
                 margin: '0',
                 width: '200px',
