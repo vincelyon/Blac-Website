@@ -71,8 +71,8 @@ const Index = () => {
       </div>
 
       <div style={{ marginTop: '20px', height: 'fit-content' }}>
-        <h2 style={{ textAlign: 'center', fontSize: '24px' }}>Categories</h2>
-        <div style={{ display: 'flex', overflowX: 'auto', padding: '10px', borderRadius: '10px', backgroundColor: '#4B4C46', justifyContent: 'center' }}>
+        <h2 style={{ textAlign: 'center', fontSize: '24px', color:'white' }}>Categories</h2>
+        <div style={{ display: 'flex', overflowX: 'auto', padding: '10px', borderRadius: '10px', backgroundColor: '#424442', justifyContent: 'center' }}>
           {categories.map((category) => (
             <div
               key={category.id}
@@ -153,7 +153,7 @@ const CategoryPage = ({ categoryName, items }) => {
         {items.map((item) => (
           <div key={item.id} style={{ marginBottom: '20px', padding: '20px', border: '1px solid #ccc', borderRadius: '8px', backgroundColor: '#424442', flex: '0 0 calc(33.33% - 20px)', margin: '10px', minWidth: '250px' }}>
             <h3>{item.itemName}</h3>
-            <p><strong>Category:</strong> {item.categoryName}</p>
+            <p style={{color:'white'}}><strong>Category:</strong> {item.categoryName}</p>
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <img src={item.itemImage} alt={item.itemName} style={{ width: '100px', height: '100px', borderRadius: '5px', marginRight: '20px' }} />
               <div>

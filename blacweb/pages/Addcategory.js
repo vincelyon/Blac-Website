@@ -48,7 +48,7 @@ const AddCategory = () => {
       if (added) {
         setCategoryName('');
         setCategoryImage('');
-        alert('Data added to Firestore');
+        alert('Category Added Successfully');
       }
     } catch (error) {
       console.error('Error adding category:', error);
@@ -56,40 +56,42 @@ const AddCategory = () => {
   };
 
   return (
-    <main style={{ textAlign: 'center', padding: '20px' }}>
-      <h1 className="text-5xl font-bold m-10">Add A New Category</h1>
-      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <label htmlFor="categoryName" style={{ marginBottom: '10px' }}>Category Name</label>
-        <input
-          type="text"
-          id="categoryName"
-          value={categoryName}
-          onChange={(e) => setCategoryName(e.target.value)}
-          style={{ padding: '8px', marginBottom: '20px', width: '300px', borderRadius: '5px', border: '1px solid #ccc' }}
-        />
-        <label htmlFor="categoryImage" style={{ marginBottom: '10px' }}>Category Image</label>
-        <input
-          type="file"
-          id="categoryImage"
-          accept="image/*"
-          onChange={handleCategoryImageChange}
-          style={{ marginBottom: '20px' }}
-        />
-        {categoryImage && (
-          <img
-            src={categoryImage}
-            alt="Category"
-            style={{ maxWidth: '300px', marginTop: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
+    <div style={{ backgroundColor: '#333', color: '#fff', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <div style={{ width: '80%', maxWidth: '600px', padding: '20px', borderRadius: '10px', background: '#fff', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+        <h1 className="text-5xl font-bold mb-8" style={{ color: '#333', textAlign: 'center' }}>Add A New Category</h1>
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <label htmlFor="categoryName" style={{ marginBottom: '10px', color: '#333' }}>Category Name</label>
+          <input
+            type="text"
+            id="categoryName"
+            value={categoryName}
+            onChange={(e) => setCategoryName(e.target.value)}
+            style={{ padding: '8px', marginBottom: '20px', width: '300px', borderRadius: '5px', border: '1px solid #ccc' }}
           />
-        )}
-        <button
-          type="submit"
-          style={{ padding: '10px 20px', backgroundColor: '#007bff', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
-        >
-          Submit
-        </button>
-      </form>
-    </main>
+          <label htmlFor="categoryImage" style={{ marginBottom: '10px', color: '#333' }}>Category Image</label>
+          <input
+            type="file"
+            id="categoryImage"
+            accept="image/*"
+            onChange={handleCategoryImageChange}
+            style={{ marginBottom: '20px' }}
+          />
+          {categoryImage && (
+            <img
+              src={categoryImage}
+              alt="Category"
+              style={{ maxWidth: '300px', marginTop: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
+            />
+          )}
+          <button
+            type="submit"
+            style={{ padding: '10px 20px', backgroundColor: '#007bff', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
   );
 };
 
