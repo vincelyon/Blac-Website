@@ -72,8 +72,8 @@ const Index = () => {
         <div style={{ flex: '20%', textAlign: 'center', maxWidth: '40%' }}>
           <img src="images/a.jpeg" alt="Side Image 2" style={{ width: '100%', maxWidth: '250px', height: '100%', borderRadius: '8px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }} />
         </div>
-        <div style={{ flex: '50%', textAlign: 'center', maxWidth: '40%', backgroundColor:'#38383870', padding:'20px', borderRadius:'10px'}}>
-          <h1 style={{ fontSize: '25px', margin: '0', marginBottom: '10px', fontWeight: 'bolder' }}>WELCOME TO BLAC!</h1>
+        <div style={{ flex: '50%', textAlign: 'center', maxWidth: '40%', backgroundColor:'#3838385B', padding:'20px', borderRadius:'10px'}}>
+          <h1 style={{ fontSize: '25px', margin: '0', marginBottom: '10px', fontWeight: 'bolder'}}>WELCOME TO BLAC!</h1>
           <h2 style={{ fontSize: '15px', margin: '0', marginBottom: '10px' }}>THE RIGHT TRIB</h2>
         </div>
       </div>
@@ -90,8 +90,9 @@ const Index = () => {
     <h2 style={{
       textAlign: 'center',
       fontSize: '24px',
-      fontFamily: 'Arial, sans-serif'
-    }}>C A T E G O R I E S</h2>
+      fontFamily: 'Arial, sans-serif',
+      color:'#070000FD'
+    }}><b>C A T E G O R I E S</b></h2>
     <div style={{
       display: 'flex',
       overflowX: 'auto',
@@ -154,23 +155,23 @@ const Index = () => {
           <img src="images/icon.png" alt="Logo" style={{ width: '100px', height: 'auto' }} />
         </div>
         <div style={{ flex: '1 1 100%', textAlign: 'center', marginBottom: '20px', marginTop: '-20px' }}>
-          <h3 style={{ fontSize: '20px', marginBottom: '5px', color: 'black' }}>BLAC!</h3>
-          <p style={{ fontSize: '14px', marginBottom: '5px', color: 'black' }}>Your ultimate fashion destination</p>
+          <h3 style={{ fontSize: '20px', marginBottom: '5px', color: 'black' }}>B L A C !</h3>
+          <p style={{ fontSize: '14px', marginBottom: '5px', color: 'black' }}><b>THE RIGHT TRIB </b></p>
         </div>
         <div style={{ flex: '1 1 100%', textAlign: 'center', marginBottom: '20px' }}>
-          <h2 style={{ fontSize: '14px', marginBottom: '10px' }}>For more information, contact us by pressing the button below:</h2>
-          <button style={{ fontSize: '14px', padding: '8px 16px', backgroundColor: '#92E2B6', color: '#333', border: 'none', cursor: 'pointer', borderRadius: '5px' }}>Contact Us</button>
+          <h2 style={{ fontSize: '14px', marginBottom: '10px', color:'blac' }}>For more information, contact us by pressing the button below:</h2>
+          <button style={{ fontSize: '14px', padding: '8px 16px', backgroundColor: '#0A194B52', color: 'white', border: 'none', cursor: 'pointer', borderRadius: '5px' }}>Contact Us</button>
         </div>
         <div style={{ flex: '1 1 100%', textAlign: 'center' }}>
           <h3 style={{ fontSize: '14px', marginBottom: '5px', color: 'black', textAlign: 'center' }}>Follow Us On:</h3>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <a href="https://www.facebook.com/blactherighttribe?mibextid=LQQJ4d" style={{ textDecoration: 'none', color: '#EFEFF0', marginRight: '10px' }}>
+            <a href="https://www.facebook.com/blactherighttribe?mibextid=LQQJ4d" style={{ textDecoration: 'none', color: '#657ECF9F', marginRight: '10px' }}>
               <FontAwesomeIcon icon={faFacebook} style={{ fontSize: '20px' }} />
             </a>
-            <a href="https://twitter.com/blac_tribe/status/1742629874597028327?s=20" style={{ textDecoration: 'none', color: '#FFFFFF', marginRight: '10px' }}>
+            <a href="https://twitter.com/blac_tribe/status/1742629874597028327?s=20" style={{ textDecoration: 'none', color: '#657ECF9F', marginRight: '10px' }}>
               <FontAwesomeIcon icon={faTwitter} style={{ fontSize: '20px' }} />
             </a>
-            <a href="https://www.instagram.com/blac_therighttribe/?igsh=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr" style={{ textDecoration: 'none', color: '#FFFFFF' }}>
+            <a href="https://www.instagram.com/blac_therighttribe/?igsh=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr" style={{ textDecoration: 'none', color: '#657ECF9F' }}>
               <FontAwesomeIcon icon={faInstagram} style={{ fontSize: '20px' }} />
             </a>
           </div>
