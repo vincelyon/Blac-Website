@@ -73,23 +73,23 @@ const Navbar = () => {
               }}
             >
               <li style={listItemStyle}>
-                <Link href="/">
-                  <b style={listItemStyle}>Home</b>
+                <Link href="/" passHref>
+                  <span style={{ ...listItemStyle, textDecoration: 'none' }}>Home</span>
                 </Link>
               </li>
               <li style={listItemStyle}>
-                <Link href="/about">
-                  <b style={listItemStyle}>About Us</b>
+                <Link href="/about" passHref>
+                  <span style={{ ...listItemStyle, textDecoration: 'none' }}>About Us</span>
                 </Link>
               </li>
               <li style={listItemStyle}>
-                <Link href="/contact">
-                  <b style={listItemStyle}>Contact Us</b>
+                <Link href="/contact" passHref>
+                  <span style={{ ...listItemStyle, textDecoration: 'none' }}>Contact Us</span>
                 </Link>
               </li>
               <li style={listItemStyle}>
-                <Link href="/login">
-                  <b style={listItemStyle}>Login</b>
+                <Link href="/login" passHref>
+                  <span style={{ ...listItemStyle, textDecoration: 'none' }}>Login</span>
                 </Link>
               </li>
             </ul>

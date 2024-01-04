@@ -151,7 +151,7 @@ const CategoryPage = ({ categoryName, items }) => {
       </div>
       <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
         {items.map((item) => (
-          <div key={item.id} style={{ marginBottom: '20px', padding: '20px', border: '1px solid #ccc', borderRadius: '8px', backgroundColor: 'lightblue', flex: '0 0 calc(33.33% - 20px)', margin: '10px', minWidth: '250px' }}>
+          <div key={item.id} style={{ marginBottom: '20px', padding: '20px', border: '1px solid #ccc', borderRadius: '8px', backgroundColor: '#6B6B5D', flex: '0 0 calc(33.33% - 20px)', margin: '10px', minWidth: '250px' }}>
             <h3>{item.itemName}</h3>
             <p><strong>Category:</strong> {item.categoryName}</p>
             <div style={{ display: 'flex', alignItems: 'center' }}>
