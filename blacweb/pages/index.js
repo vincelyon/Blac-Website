@@ -86,12 +86,14 @@ const Index = () => {
   backgroundSize: 'cover',
   color: 'white'
 }}>
-  <div style={{ backgroundColor: '#5F69692D', padding: '20px' }}>
+  <div style={{ backgroundColor: '#5461612D', padding: '20px' }}>
     <h2 style={{
       textAlign: 'center',
       fontSize: '24px',
       fontFamily: 'Arial, sans-serif',
-      color:'#FFFFFFFD'
+      color:'#FFFFFFFD',
+      backgroundColor:'#0000003B',
+      padding:'20px',
     }}><b>C A T E G O R I E S</b></h2>
     <div style={{
       display: 'flex',
