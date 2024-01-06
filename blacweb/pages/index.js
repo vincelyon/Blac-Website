@@ -74,7 +74,7 @@ const Index = () => {
         </div>
         <div style={{ flex: '50%', textAlign: 'center', maxWidth: '40%', backgroundColor:'#3838385B', padding:'20px', borderRadius:'10px'}}>
           <h1 style={{ fontSize: '25px', margin: '0', marginBottom: '10px', fontWeight: 'bolder'}}>WELCOME TO BLAC!</h1>
-          <h2 style={{ fontSize: '15px', margin: '0', marginBottom: '10px' }}>THE RIGHT TRIB</h2>
+          <h2 style={{ fontSize: '15px', margin: '0', marginBottom: '10px' }}>THE RIGHT TRIBE</h2>
         </div>
       </div>
 
@@ -158,7 +158,7 @@ const Index = () => {
         </div>
         <div style={{ flex: '1 1 100%', textAlign: 'center', marginBottom: '20px', marginTop: '-20px' }}>
           <h3 style={{ fontSize: '20px', marginBottom: '5px', color: 'black' }}>B L A C !</h3>
-          <p style={{ fontSize: '14px', marginBottom: '5px', color: 'black' }}><b>THE RIGHT TRIB </b></p>
+          <p style={{ fontSize: '14px', marginBottom: '5px', color: 'black' }}><b>THE RIGHT TRIBE </b></p>
         </div>
         <div style={{ flex: '1 1 100%', textAlign: 'center', marginBottom: '20px' }}>
           <h2 style={{ fontSize: '14px', marginBottom: '10px', color:'black' }}>For more information, contact us by pressing the button below:</h2>
