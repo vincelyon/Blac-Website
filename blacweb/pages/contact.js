@@ -23,15 +23,15 @@ const ContactUsPage = () => {
               <h2 style={{ color: 'Black', fontSize: '24px', textAlign: 'center', marginBottom: '30px'}}>OUR DETAILS</h2>
               <div style={{ marginBottom: '20px', fontSize: '16px', lineHeight: '1.6' }}>
                 <FontAwesomeIcon icon={faMapMarker} style={{ fontSize: '20px', marginRight: '10px' }} />
-                <span>198 West 21th Street, Suite 721<br />New York, NY 10016</span>
+                <span>Blac official, Ndola<br />Copperbelt, Zambia</span>
               </div>
               <div style={{ marginBottom: '20px', fontSize: '16px', lineHeight: '1.6' }}>
                 <FontAwesomeIcon icon={faPhone} style={{ fontSize: '20px', marginRight: '10px' }} />
-                <span><a href="tel://1234567920" style={{ color: '#333' }}>+1 (235) 235-5598</a></span>
+                <span><a href="tel:0975479622" style={{ color: '#333' }}>+260 (975) 479-622</a></span>
               </div>
               <div style={{ marginBottom: '20px', fontSize: '16px', lineHeight: '1.6' }}>
                 <FontAwesomeIcon icon={faEnvelope} style={{ fontSize: '20px', marginRight: '10px' }} />
-                <span><a href="mailto:info@yoursite.com" style={{ color: '#333' }}>info@yoursite.com</a></span>
+                <span><a href="mailto:Blactherighttribe@gmail.com" style={{ color: '#333' }}>Blactherighttribe@gmail.com</a></span>
               </div>
             </div>
             </div>

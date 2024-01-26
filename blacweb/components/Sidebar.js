@@ -31,7 +31,14 @@ const Sidebar = () => {
   const handleNavigation = (route) => {
     router.push(route);
   };
-
+  const handleLogout = async () => {
+    try {
+      await auth.signOut();
+      router.push('/login');
+    } catch (error) {
+      console.error('Logout error:', error.message);
+    }
+  };
   const renderButton = (text, icon, onClick) => {
     return (
       <div style={{ ...cardStyle, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -65,6 +72,9 @@ const Sidebar = () => {
       <div>
         {renderButton('Edit Item', <FaEdit style={{ marginRight: '5px' }} />, () => handleNavigation('/EditItem'))}
       </div>
+      <button style={{ ...buttonStyle, backgroundColor: '#e74c3c' }} onClick={handleLogout}>
+            Logout
+      </button>
     </div>
   );
 };
