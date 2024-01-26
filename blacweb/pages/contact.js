@@ -1,139 +1,142 @@
-// pages/contact.js
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarker, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import Navbar from '@/components/Navbar';
+import { images } from '@/next.config';
 
-import Navbar from '../components/Navbar';
-import { useState } from 'react';
-
-const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      const response = await fetch('/api/sendEmail', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        console.log(data); // Response from the server
-        // You can perform additional actions based on the response here
-      } else {
-        throw new Error('Failed to send email');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      // Handle error scenarios here
-    }
-  };
-
-  const contactContainerStyle = {
-    margin: '0 auto',
-    padding: '20px',
-    backgroundImage: 'url("images/yeyeye.jpg")', 
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    color: 'white', 
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    minHeight: '100vh',
-    opacity: 0.9,
-  };
-
-  const formStyle = {
+const ContactUsPage = () => {
+  // Define sharedContainer separately
+  const sharedContainer = {
     width: '100%',
-    maxWidth: '400px',
-    padding: '20px',
-    borderRadius: '10px',
-    background: 'rgba(255, 255, 255, 0.8)',
-    color:'black'
+    marginBottom: '20px',
+    maxWidth: '600px',  
   };
 
   return (
-    <div>
-        <Navbar/>
-    <div style={contactContainerStyle}>
-      <h1>Contact Us</h1>
-      <div>
-        <h2>THE RIGHT TRIB</h2>
-        <p>Company Name: Blac!</p>
-        <p>Email: blactherighttribe@gmail.com</p>
-        <p>Phone: +260975479622</p>
-        {/* Add more contact information as needed */}
+    <div style={styles.container}>
+      <Navbar />
+      <div style={styles.innerContainer}>
+        <div style={styles.infoAndFormContainer}>
+          <div style={{ ...sharedContainer, ...styles.contactInfoContainer }}>
+            <div style={{ backgroundColor: '#fff', padding: '30px', borderRadius: '10px', boxShadow: '0 0 20px rgba(0, 0, 0, 0.1)', backgroundImage: `url('./images/contactme.jpg')`, backgroundSize:'cover',}}>
+              <div style={{backgroundColor:'#FFFFFF44', borderRadius:'10px', padding:'20px'}}>
+              <h2 style={{ color: 'Black', fontSize: '24px', textAlign: 'center', marginBottom: '30px'}}>OUR DETAILS</h2>
+              <div style={{ marginBottom: '20px', fontSize: '16px', lineHeight: '1.6' }}>
+                <FontAwesomeIcon icon={faMapMarker} style={{ fontSize: '20px', marginRight: '10px' }} />
+                <span>198 West 21th Street, Suite 721<br />New York, NY 10016</span>
+              </div>
+              <div style={{ marginBottom: '20px', fontSize: '16px', lineHeight: '1.6' }}>
+                <FontAwesomeIcon icon={faPhone} style={{ fontSize: '20px', marginRight: '10px' }} />
+                <span><a href="tel://1234567920" style={{ color: '#333' }}>+1 (235) 235-5598</a></span>
+              </div>
+              <div style={{ marginBottom: '20px', fontSize: '16px', lineHeight: '1.6' }}>
+                <FontAwesomeIcon icon={faEnvelope} style={{ fontSize: '20px', marginRight: '10px' }} />
+                <span><a href="mailto:info@yoursite.com" style={{ color: '#333' }}>info@yoursite.com</a></span>
+              </div>
+            </div>
+            </div>
+          </div>
+          <div style={{ ...sharedContainer, ...styles.formContainer }}>
+            <div style={styles.formWrapper}>
+              <h1 style={{ color: '#fff' }}>BLAC!! <br/> The Right Tribe</h1>
+              <p style={{ color: '#fff' }}>If you have any questions or inquiries, feel free to reach out to us!</p>
+              <form style={styles.form}>
+                <div style={styles.inputGroup}>
+                  <label style={styles.label}>Name:</label>
+                  <input type="text" style={styles.input} />
+                </div>
+                <div style={styles.inputGroup}>
+                  <label style={styles.label}>Email:</label>
+                  <input type="email" style={styles.input} />
+                </div>
+                <div style={styles.inputGroup}>
+                  <label style={styles.label}>Message:</label>
+                  <textarea rows="4" style={styles.input}></textarea>
+                </div>
+                <button type="submit" style={styles.submitButton}>Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div style={formStyle}>
-        <h2>Contact Form</h2>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              style={{ width: '100%', padding: '8px', borderRadius: '5px', border: '1px solid #ccc' }}
-            />
-          </div>
-          <div>
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              style={{ width: '100%', padding: '8px', borderRadius: '5px', border: '1px solid #ccc' }}
-            />
-          </div>
-          <div>
-            <label htmlFor="message">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-              style={{ width: '100%', padding: '8px', borderRadius: '5px', border: '1px solid #ccc' }}
-            ></textarea>
-          </div>
-          <button
-            type="submit"
-            style={{
-              width: '100%',
-              padding: '10px 20px',
-              backgroundColor: '#007bff',
-              color: '#fff',
-              border: 'none',
-              borderRadius: '5px',
-              cursor: 'pointer',
-            }}
-          >
-            Send
-          </button>
-        </form>
-      </div>
-    </div>
     </div>
   );
 };
 
-export default Contact;
+const styles = {
+  container: {
+    backgroundColor: '#000000',
+    textAlign: 'center',
+    paddingBottom: '50px',
+  },
+  innerContainer: {
+    maxWidth: '1200px',
+    margin: '0 auto',
+    padding: '20px',
+    backgroundImage: `url('./images/image1.jpg')`
+
+  },
+  imageContainer: {
+    marginBottom: '20px',
+  },
+  image: {
+    maxWidth: '100%',
+    height: 'auto',
+    borderRadius: '5px',
+  },
+  infoAndFormContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontFamily: 'Arial, sans-serif',
+  },
+  contactInfoContainer: {},
+  formContainer: {},
+  formWrapper: {
+    padding: '20px',
+    border: '1px solid #ccc',
+    borderRadius: '5px',
+    backgroundColor: '#000000',
+  },
+  form: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: '20px',
+  },
+  inputGroup: {
+    marginBottom: '20px',
+    width: '100%',
+  },
+  label: {
+    marginBottom: '5px',
+    fontSize: '16px',
+    fontWeight: 'bold',
+    color: '#fff', // Changed label color to white
+  },
+  input: {
+    width: '100%',
+    padding: '10px',
+    borderRadius: '5px',
+    border: '1px solid #ccc',
+    fontSize: '16px',
+  },
+  submitButton: {
+    marginTop: '20px',
+    padding: '10px 20px',
+    backgroundColor: '#007bff',
+    color: '#fff',
+    border: 'none',
+    borderRadius: '5px',
+    cursor: 'pointer',
+    fontSize: '16px',
+  },
+  '@media (min-width: 768px)': {
+    sharedContainer: {
+      width: '20%',
+    },
+  },
+};
+
+export default ContactUsPage;

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { db } from '../utils/firebaseconfig';
 import { collection, getDocs, doc, addDoc } from 'firebase/firestore';
 import withAuth from '../utils/withAuth';
+import Sidebar from '../components/Sidebar';
 
 const AddItem = () => {
   const [categories, setCategories] = useState([]);
@@ -72,61 +73,66 @@ const AddItem = () => {
   };
 
   return (
-    <div style={{ width: '70%', margin: '0 auto', padding: '20px', border: '1px solid #ccc', borderRadius: '8px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}>
-            <h1 className="text-5xl font-bold m-10">Add A New Item</h1>
-      <form onSubmit={handleItemSubmit}>
-        <label style={{ display: 'block', marginBottom: '5px' }} htmlFor="category">Select Category</label>
-        <select
-          style={{ width: '100%', padding: '8px', marginBottom: '15px', borderRadius: '4px', border: '1px solid #ccc' }}
-          id="category"
-          value={selectedCategory}
-          onChange={(e) => setSelectedCategory(e.target.value)}
-        >
-          <option value="">Select a category</option>
-          {categories.map((category) => (
-            <option key={category.id} value={category.id}>
-              {category.data.name}
-            </option>
-          ))}
-        </select>
-        <label style={{ display: 'block', marginBottom: '5px' }} htmlFor="itemName">Item Name</label>
-        <input
-          style={{ width: '100%', padding: '8px', marginBottom: '15px', borderRadius: '4px', border: '1px solid #ccc' }}
-          type="text"
-          id="itemName"
-          value={itemName}
-          onChange={(e) => setItemName(e.target.value)}
-        />
-        <label style={{ display: 'block', marginBottom: '5px' }} htmlFor="itemDescription">Item Description</label>
-        <input
-          style={{ width: '100%', padding: '8px', marginBottom: '15px', borderRadius: '4px', border: '1px solid #ccc' }}
-          type="text"
-          id="itemDescription"
-          value={itemDescription}
-          onChange={(e) => setItemDescription(e.target.value)}
-        />
-        <label style={{ display: 'block', marginBottom: '5px' }} htmlFor="itemImage">Item Image</label>
-        <input
-          style={{ marginBottom: '15px' }}
-          type="file"
-          id="itemImage"
-          onChange={(e) => handleImageUpload(e)}
-        />
-        <label style={{ display: 'block', marginBottom: '5px' }} htmlFor="itemPrice">Item Price</label>
-        <input
-          style={{ width: '100%', padding: '8px', marginBottom: '15px', borderRadius: '4px', border: '1px solid #ccc' }}
-          type="number"
-          id="itemPrice"
-          value={itemPrice}
-          onChange={(e) => setItemPrice(e.target.value)}
-        />
-        <button
-          style={{ padding: '10px 20px', backgroundColor: '#007bff', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer' }}
-          type="submit"
-        >
-          Add Item
-        </button>
-      </form>
+    <div style={{ display: 'flex', backgroundColor: '#333', color: '#fff', minHeight: '100vh' }}>
+      <Sidebar />
+      <div style={{ flex: 1, padding: '30px'}}>
+        <div style={{ width: '70%', margin: '0 auto', padding: '20px', border: '1px solid #ccc', borderRadius: '8px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',backgroundColor:'white', color:'black'}}>
+          <h1 className="text-5xl font-bold m-10">Add A New Item</h1>
+          <form onSubmit={handleItemSubmit}>
+            <label style={{ display: 'block', marginBottom: '5px' }} htmlFor="category">Select Category</label>
+            <select
+              style={{ width: '100%', padding: '8px', marginBottom: '15px', borderRadius: '4px', border: '1px solid #ccc' }}
+              id="category"
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+            >
+              <option value="">Select a category</option>
+              {categories.map((category) => (
+                <option key={category.id} value={category.id}>
+                  {category.data.name}
+                </option>
+              ))}
+            </select>
+            <label style={{ display: 'block', marginBottom: '5px' }} htmlFor="itemName">Item Name</label>
+            <input
+              style={{ width: '100%', padding: '8px', marginBottom: '15px', borderRadius: '4px', border: '1px solid #ccc' }}
+              type="text"
+              id="itemName"
+              value={itemName}
+              onChange={(e) => setItemName(e.target.value)}
+            />
+            <label style={{ display: 'block', marginBottom: '5px' }} htmlFor="itemDescription">Item Description</label>
+            <input
+              style={{ width: '100%', padding: '8px', marginBottom: '15px', borderRadius: '4px', border: '1px solid #ccc' }}
+              type="text"
+              id="itemDescription"
+              value={itemDescription}
+              onChange={(e) => setItemDescription(e.target.value)}
+            />
+            <label style={{ display: 'block', marginBottom: '5px' }} htmlFor="itemImage">Item Image</label>
+            <input
+              style={{ marginBottom: '15px' }}
+              type="file"
+              id="itemImage"
+              onChange={(e) => handleImageUpload(e)}
+            />
+            <label style={{ display: 'block', marginBottom: '5px' }} htmlFor="itemPrice">Item Price</label>
+            <input
+              style={{ width: '100%', padding: '8px', marginBottom: '15px', borderRadius: '4px', border: '1px solid #ccc' }}
+              type="number"
+              id="itemPrice"
+              value={itemPrice}
+              onChange={(e) => setItemPrice(e.target.value)}
+            />
+            <button
+              style={{ padding: '10px 20px', backgroundColor: '#007bff', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer' }}
+              type="submit"
+            >
+              Add Item
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };

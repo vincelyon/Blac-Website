@@ -86,7 +86,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li style={listItemStyle}>
-                <Link href="/about" passHref>
+                <Link href="/aboutus" passHref>
                   <span style={{ ...listItemStyle, textDecoration: 'none' }}>About Us</span>
                 </Link>
               </li>

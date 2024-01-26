@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { db } from '../utils/firebaseconfig';
 import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
 import withAuth from '../utils/withAuth';
+import Sidebar from '../components/Sidebar';
 
 const DeleteCategory = () => {
   const [categories, setCategories] = useState([]);
@@ -40,26 +41,49 @@ const DeleteCategory = () => {
   };
 
   return (
-    <div style={{ backgroundColor: '#333', color: '#fff', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-      <div style={{ width: '80%', maxWidth: '600px', padding: '20px', borderRadius: '10px', background: '#fff', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
-        <h1 className="text-5xl font-bold mb-8" style={{ color: '#333', textAlign: 'center' }}>Delete A Category</h1>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <select
-            value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}
-            style={{ marginBottom: '20px', padding: '8px', width: '300px', borderRadius: '5px', border: '1px solid #ccc' }}
-          >
-            <option value="">Select a category to delete</option>
-            {categories.map((category) => (
-              <option key={category.id} value={category.id}>{category.name}</option>
-            ))}
-          </select>
-          <button
-            onClick={handleDelete}
-            style={{ padding: '10px 20px', backgroundColor: '#dc3545', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
-          >
-            Delete
-          </button>
+    <div style={{ display: 'flex', minHeight: '100vh', backgroundColor: '#060607A8', color: '#fff' }}>
+      <Sidebar />
+      <div style={{ flex: '1', padding: '20px' }}>
+        <h1 className="text-5xl font-bold mb-8" style={{ color: '#333', textAlign: 'center' }}>
+          Delete A Category
+        </h1>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div style={{ width: '100%', maxWidth: '400px' }}>
+            <select
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              style={{
+                marginBottom: '20px',
+                padding: '8px',
+                width: '100%',
+                borderRadius: '5px',
+                border: '1px solid #ccc',
+                backgroundColor: '#fff', // Adjusted background color for select
+                color: '#333', // Adjusted text color for select
+              }}
+            >
+              <option value="">Select a category to delete</option>
+              {categories.map((category) => (
+                <option key={category.id} value={category.id}>
+                  {category.name}
+                </option>
+              ))}
+            </select>
+            <button
+              onClick={handleDelete}
+              style={{
+                width: '100%',
+                padding: '10px',
+                backgroundColor: '#dc3545',
+                color: '#fff',
+                border: 'none',
+                borderRadius: '5px',
+                cursor: 'pointer',
+              }}
+            >
+              Delete
+            </button>
+          </div>
         </div>
       </div>
     </div>

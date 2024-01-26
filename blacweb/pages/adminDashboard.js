@@ -1,28 +1,37 @@
 import React, { useState, useEffect } from 'react';
 import { auth } from '../utils/firebaseconfig';
 import { useRouter } from 'next/router';
-import { FaPlus, FaMinus, FaPlusCircle, FaMinusCircle, FaEdit } from 'react-icons/fa'; // Import icons as needed
+import { FaPlus, FaMinus, FaPlusCircle, FaMinusCircle, FaEdit } from 'react-icons/fa';
 import withAuth from '../utils/withAuth';
 
 const buttonStyle = {
-  backgroundColor: '#3498db',
+  backgroundColor: '#113146',
   color: '#fff',
   padding: '10px',
   border: 'none',
   borderRadius: '4px',
   cursor: 'pointer',
-  margin: '5px',
   display: 'flex',
   alignItems: 'center',
-  width: '100px'
+  width: '100px',
+  marginLeft: '10%',
 };
 
 const sidebarStyle = {
-  backgroundColor: '#333',
+  backgroundColor: '#21282E',
   color: '#fff',
   width: '200px',
   minHeight: '100vh',
   padding: '20px',
+};
+
+const cardStyle = {
+  backgroundColor: '#fff',
+  color: '#000',
+  padding: '20px',
+  borderRadius: '8px',
+  marginBottom: '20px',
+  boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
 };
 
 const AdminDashboard = () => {
@@ -50,68 +59,46 @@ const AdminDashboard = () => {
     }
   };
 
-  const handleAddCategory = () => {
-    router.push('/Addcategory');
+  const handleNavigation = (route) => {
+    router.push(route);
   };
 
-  const handleRemoveCategory = () => {
-    router.push('/DeleteCategory');
-  };
-
-  const handleAddItem = () => {
-    router.push('/Additem');
-  };
-
-  const handleRemoveItem = () => {
-    router.push('/DeleteItem');
-  };
-
-  const handleEditCategory = () => {
-    router.push('/EditCategory');
-  };
-
-  const handleEditItem = () => {
-    router.push('/EditItem');
+  const renderButton = (text, icon, onClick) => {
+    return (
+      <div style={{ ...cardStyle, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div>
+          {icon} {text}
+        </div>
+        <button style={buttonStyle} onClick={onClick}>
+          Go
+        </button>
+      </div>
+    );
   };
 
   return (
-    <div style={{ display: 'flex', backgroundColor:'#969494' }}>
+    <div style={{ display: 'flex', backgroundColor: '#969494' }}>
       <div style={sidebarStyle}>
-        <div>
-          <img src="images/icon.png" alt="Logo" style={{ width: '100px', height: 'auto' , marginLeft:'15%'}} />
+        <div style={{ marginBottom: '20px' }}>
+          {renderButton('Add Category', <FaPlus style={{ marginRight: '5px' }} />, () => handleNavigation('/Addcategory'))}
         </div>
         <div style={{ marginBottom: '20px' }}>
-          <button style={buttonStyle} onClick={handleAddCategory}>
-            <FaPlus style={{ marginRight: '5px' }} /> Add Category
-          </button>
+          {renderButton('Remove Category', <FaMinus style={{ marginRight: '5px' }} />, () => handleNavigation('/DeleteCategory'))}
         </div>
         <div style={{ marginBottom: '20px' }}>
-          <button style={buttonStyle} onClick={handleRemoveCategory}>
-            <FaMinus style={{ marginRight: '5px' }} /> Remove Category
-          </button>
+          {renderButton('Add Item', <FaPlusCircle style={{ marginRight: '5px' }} />, () => handleNavigation('/Additem'))}
         </div>
         <div style={{ marginBottom: '20px' }}>
-          <button style={buttonStyle} onClick={handleAddItem}>
-            <FaPlusCircle style={{ marginRight: '5px' }} /> Add Item
-          </button>
+          {renderButton('Remove Item', <FaMinusCircle style={{ marginRight: '5px' }} />, () => handleNavigation('/DeleteItem'))}
         </div>
         <div style={{ marginBottom: '20px' }}>
-          <button style={buttonStyle} onClick={handleRemoveItem}>
-            <FaMinusCircle style={{ marginRight: '5px' }} /> Remove Item
-          </button>
-        </div>
-        <div style={{ marginBottom: '20px' }}>
-          <button style={buttonStyle} onClick={handleEditCategory}>
-            <FaEdit style={{ marginRight: '5px' }} /> Edit Category
-          </button>
+          {renderButton('Edit Category', <FaEdit style={{ marginRight: '5px' }} />, () => handleNavigation('/EditCategory'))}
         </div>
         <div>
-          <button style={buttonStyle} onClick={handleEditItem}>
-            <FaEdit style={{ marginRight: '5px' }} /> Edit Item
-          </button>
+          {renderButton('Edit Item', <FaEdit style={{ marginRight: '5px' }} />, () => handleNavigation('/EditItem'))}
         </div>
       </div>
-      <div style={{ padding: '20px'}}>
+      <div style={{ padding: '20px' }}>
         <h2>Welcome to Admin Dashboard</h2>
         {user && (
           <button style={{ ...buttonStyle, backgroundColor: '#e74c3c' }} onClick={handleLogout}>
