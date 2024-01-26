@@ -73,7 +73,6 @@ const styles = {
     maxWidth: '1200px',
     margin: '0 auto',
     padding: '20px',
-    backgroundImage: `url('./images/image1.jpg')`
 
   },
   imageContainer: {
