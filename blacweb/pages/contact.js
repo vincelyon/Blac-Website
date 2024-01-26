@@ -65,7 +65,7 @@ const ContactUsPage = () => {
 
 const styles = {
   container: {
-    backgroundColor: '#2D413C',
+    backgroundColor: '#464746',
     textAlign: 'center',
     paddingBottom: '50px',
   },
