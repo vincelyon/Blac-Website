@@ -57,9 +57,9 @@ const AddCategory = () => {
   };
 
   return (
-    <div style={{ display: 'flex', backgroundColor: '#333', color: '#fff', minHeight: '100vh' }}>
+    <div style={{ display: 'flex', backgroundColor: 'white', color: '#fff', minHeight: '100vh' }}>
       <Sidebar />
-      <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor:'#464746'}}>
         <div style={{ width: '80%', maxWidth: '600px', padding: '20px', borderRadius: '10px', background: '#fff', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
           <h1 className="text-5xl font-bold mb-8" style={{ color: '#333', textAlign: 'center' }}>Add A New Category</h1>
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>

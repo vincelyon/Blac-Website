@@ -73,10 +73,10 @@ const AddItem = () => {
   };
 
   return (
-    <div style={{ display: 'flex', backgroundColor: '#333', color: '#fff', minHeight: '100vh' }}>
+    <div style={{ display: 'flex', color: '#fff', minHeight: '100vh' }}>
       <Sidebar />
       <div style={{ flex: 1, padding: '30px'}}>
-        <div style={{ width: '70%', margin: '0 auto', padding: '20px', border: '1px solid #ccc', borderRadius: '8px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',backgroundColor:'white', color:'black'}}>
+        <div style={{ width: '70%', margin: '0 auto', padding: '20px', border: '1px solid #ccc', borderRadius: '8px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',backgroundColor:'#464746', color:'black'}}>
           <h1 className="text-5xl font-bold m-10">Add A New Item</h1>
           <form onSubmit={handleItemSubmit}>
             <label style={{ display: 'block', marginBottom: '5px' }} htmlFor="category">Select Category</label>
