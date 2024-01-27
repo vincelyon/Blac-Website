@@ -23,7 +23,7 @@ const ContactUsPage = () => {
               <h2 style={{ color: 'Black', fontSize: '24px', textAlign: 'center', marginBottom: '30px'}}>OUR DETAILS</h2>
               <div style={{ marginBottom: '20px', fontSize: '16px', lineHeight: '1.6' }}>
                 <FontAwesomeIcon icon={faMapMarker} style={{ fontSize: '20px', marginRight: '10px' }} />
-                <span>Blac official, Ndola<br />Copperbelt, Zambia</span>
+                <span>156 Broadway road,Ndola<br />Copperbelt, Zambia</span>
               </div>
               <div style={{ marginBottom: '20px', fontSize: '16px', lineHeight: '1.6' }}>
                 <FontAwesomeIcon icon={faPhone} style={{ fontSize: '20px', marginRight: '10px' }} />
