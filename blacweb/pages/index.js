@@ -71,8 +71,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black" style={{ backgroun
-    dColor: '#92928E' }}>
+    <div className="min-h-screen bg-black" style={{ backgroundColor: '#92928E', }}>
       <Navbar />
       <div style={{
         color: 'white',
@@ -84,7 +83,7 @@ const Index = () => {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        fontFamily: 'Arial, sans-serif'
+        fontFamily: 'Arial, sans-serif',
       }}>
         {/* Header */}
         <div style={{ flex: '20%', textAlign: 'center', maxWidth: '40%' }}>
