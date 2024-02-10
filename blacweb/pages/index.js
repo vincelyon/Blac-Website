@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'; // Import the spinner icon
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { db } from '../utils/firebaseconfig';
 import { collection, getDocs } from 'firebase/firestore';
-import Navbar from "../components/Navbar"
+import Navbar from "../components/Navbar";
 
 const Index = () => {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const itemsRef = useRef(null); // Ref for the items section
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -45,6 +47,9 @@ const Index = () => {
       }));
 
       setSelectedCategory({ categoryId, categoryName, items: itemsData });
+
+      // Scroll to the items section
+      itemsRef.current.scrollIntoView({ behavior: 'smooth' });
     } catch (error) {
       console.error('Error fetching items: ', error);
     }
@@ -54,104 +59,120 @@ const Index = () => {
     await fetchItemsForCategory(categoryId, categoryName);
   };
 
+  const handleBuyConfirmation = (item) => {
+    const isConfirmed = window.confirm(`Do you want to buy ${item.itemName}?`);
+    if (isConfirmed) {
+      // Implement logic to redirect to email with item details
+      const itemDetails = `Item: ${item.itemName}, Price: K${item.itemPrice}, Category: ${item.categoryName}`;
+      const emailSubject = encodeURIComponent(`Purchase: ${item.itemName}`);
+      const emailBody = encodeURIComponent(`I would like to purchase the following item:\n\n${itemDetails}`);
+      window.location.href = `mailto:blactherighttribe@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-black" style={{backgroundColor:'#92928E'}}>
+    <div className="min-h-screen bg-black" style={{ backgroun
+    dColor: '#92928E' }}>
       <Navbar />
-      <div style={{ 
-  color: 'white', 
-  backgroundImage: "url('/images/hi.jpg')",
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: 'cover',
-  padding: '20px', 
-  textAlign: 'center', 
-  display: 'flex', 
-  justifyContent: 'space-between', 
-  alignItems: 'center', 
-  fontFamily: 'Arial, sans-serif' 
-}}>
+      <div style={{
+        color: 'white',
+        backgroundImage: "url('/images/hi.jpg')",
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        padding: '20px',
+        textAlign: 'center',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        fontFamily: 'Arial, sans-serif'
+      }}>
+        {/* Header */}
         <div style={{ flex: '20%', textAlign: 'center', maxWidth: '40%' }}>
           <img src="images/a.jpeg" alt="Side Image 2" style={{ width: '100%', maxWidth: '250px', height: '100%', borderRadius: '8px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }} />
         </div>
-        <div style={{ flex: '50%', textAlign: 'center', maxWidth: '40%', backgroundColor:'#3838385B', padding:'20px', borderRadius:'10px'}}>
-          <h1 style={{ fontSize: '25px', margin: '0', marginBottom: '10px', fontWeight: 'bolder'}}>WELCOME TO BLAC!</h1>
+        <div style={{ flex: '50%', textAlign: 'center', maxWidth: '40%', backgroundColor: '#3838385B', padding: '20px', borderRadius: '10px' }}>
+          <h1 style={{ fontSize: '25px', margin: '0', marginBottom: '10px', fontWeight: 'bolder' }}>WELCOME TO BLAC!</h1>
           <h2 style={{ fontSize: '15px', margin: '0', marginBottom: '10px' }}>THE RIGHT TRIBE</h2>
         </div>
       </div>
 
+      {/* Categories */}
       <div style={{
-  marginTop: '40px',
-  height: 'fit-content',
-  backgroundImage: "url('/images/4.jpg')",
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: 'cover',
-  color: 'white'
-}}>
-  <div style={{ backgroundColor: '#5461612D', padding: '20px' }}>
-    <h2 style={{
-      textAlign: 'center',
-      fontSize: '24px',
-      fontFamily: 'Arial, sans-serif',
-      color:'#FFFFFFFD',
-      backgroundColor:'#0000003B',
-      padding:'20px',
-    }}><b>C A T E G O R I E S</b></h2>
-    <div style={{
-      display: 'flex',
-      overflowX: 'auto',
-      padding: '10px',
-      borderRadius: '10px',
-      justifyContent: 'center',
-      scrollbarWidth: 'none', /* Hide scrollbar */
-      WebkitOverflowScrolling: 'touch', /* Smooth scrolling for iOS */
-      flexWrap: 'wrap', /* Allow items to wrap on smaller screens */
-      '@media screen and (maxWidth: 768px)': { // <-- Media query removed from here
-        flexDirection: 'row',
-        overflowX: 'auto',
-      }
-    }}>
-      {categories.map((category) => (
-        <div
-          key={category.id}
-          style={{
-            padding: '10px',
-            borderRadius: '8px',
-            margin: '5px',
-            cursor: 'pointer',
-            transition: 'transform 0.3s ease-in-out',
-            flex: '0 0 150px', /* Adjust the width according to your need */
-            maxWidth: '200px', /* Set maximum width if necessary */
-            '@media screen and (maxWidth: 768px)': { // <-- Media query removed from here
-              flex: '0 0 100px', /* Adjust width for smaller screens */
-              maxWidth: '150px', /* Max width for smaller screens */
-            }
-          }}
-          onClick={() => handleCategoryClick(category.id, category.name)}
-        >
-          <p style={{
-            fontSize: '16px',
-            fontWeight: 'bold',
-            marginTop: '5px',
+        marginTop: '40px',
+        height: 'fit-content',
+        backgroundImage: "url('/images/4.jpg')",
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        color: 'white'
+      }}>
+        <div style={{ backgroundColor: '#5461612D', padding: '20px' }}>
+          <h2 style={{
             textAlign: 'center',
-            backgroundColor: 'black',
+            fontSize: '24px',
+            fontFamily: 'Arial, sans-serif',
+            color: '#FFFFFFFD',
+            backgroundColor: '#0000003B',
             padding: '20px',
-            whiteSpace: 'nowrap', /* Prevent wrapping of text */
-            overflow: 'hidden',
-            textOverflow: 'ellipsis' /* Show ellipsis for long text */
-          }}>{category.name}</p>
+          }}><b>C A T E G O R I E S</b></h2>
+          <div style={{
+            display: 'flex',
+            overflowX: 'auto',
+            padding: '10px',
+            borderRadius: '10px',
+            justifyContent: 'center',
+            scrollbarWidth: 'none',
+            WebkitOverflowScrolling: 'touch',
+            flexWrap: 'wrap',
+          }}>
+            {categories.length === 0 ? ( // Display loading animation while categories are being fetched
+              <div style={{ textAlign: 'center', width: '100%' }}>
+                <FontAwesomeIcon icon={faSpinner} spin size="3x" style={{ color: 'white' }} /> {/* Display spinner icon while loading */}
+              </div>
+            ) : (
+              categories.map((category) => (
+                <div
+                  key={category.id}
+                  style={{
+                    padding: '10px',
+                    borderRadius: '8px',
+                    margin: '5px',
+                    cursor: 'pointer',
+                    transition: 'transform 0.3s ease-in-out',
+                    flex: '0 0 150px',
+                    maxWidth: '200px',
+                  }}
+                  onClick={() => handleCategoryClick(category.id, category.name)}
+                >
+                  <p style={{
+                    fontSize: '16px',
+                    fontWeight: 'bold',
+                    marginTop: '5px',
+                    textAlign: 'center',
+                    backgroundColor: 'black',
+                    padding: '20px',
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis'
+                  }}>{category.name}</p>
+                </div>
+              ))
+            )}
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
-</div>
+      </div>
 
+      {/* Category Page */}
+      <div ref={itemsRef}>
+        {selectedCategory && (
+          <CategoryPage
+            categoryName={selectedCategory.categoryName}
+            items={selectedCategory.items}
+            onBuyConfirmation={handleBuyConfirmation}
+          />
+        )}
+      </div>
 
-      {selectedCategory && (
-        <CategoryPage
-          categoryName={selectedCategory.categoryName}
-          items={selectedCategory.items}
-        />
-      )}
-
+      {/* Footer */}
       <footer style={{ backgroundColor: '#424442', color: 'white', padding: '20px', textAlign: 'center', marginTop: '30px', fontFamily: 'Arial, sans-serif', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
         <div style={{ flex: '1 1 100%', marginBottom: '0px' }}>
           <img src="images/icon.png" alt="Logo" style={{ width: '100px', height: 'auto' }} />
@@ -161,7 +182,7 @@ const Index = () => {
           <p style={{ fontSize: '14px', marginBottom: '5px', color: 'black' }}><b>THE RIGHT TRIBE </b></p>
         </div>
         <div style={{ flex: '1 1 100%', textAlign: 'center', marginBottom: '20px' }}>
-          <h2 style={{ fontSize: '14px', marginBottom: '10px', color:'black' }}>For more information, contact us by pressing the button below:</h2>
+          <h2 style={{ fontSize: '14px', marginBottom: '10px', color: 'black' }}>For more information, contact us by pressing the button below:</h2>
           <button style={{ fontSize: '14px', padding: '8px 16px', backgroundColor: '#0A194B52', color: 'white', border: 'none', cursor: 'pointer', borderRadius: '5px' }}>Contact Us</button>
         </div>
         <div style={{ flex: '1 1 100%', textAlign: 'center' }}>
@@ -178,44 +199,69 @@ const Index = () => {
             </a>
           </div>
         </div>
-        <style jsx>{`
-          @media screen and (min-width: 768px) { /* Tablet and larger screens */
-            footer {
-              flex-direction: row;
-            }
-            div {
-              flex: 1 1 auto;
-              text-align: center;
-              margin-bottom: 0;
-            }
-          }
-        `}
-        </style>
       </footer>
     </div>
   );
 };
 
-const CategoryPage = ({ categoryName, items }) => {
+const CategoryPage = ({ categoryName, items, onBuyConfirmation }) => {
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [loadingItems, setLoadingItems] = useState(false);
+
+  useEffect(() => {
+    setLoadingItems(true);
+    // Simulate fetching items for demonstration purposes
+    setTimeout(() => {
+      setLoadingItems(false);
+    }, 2000); // Change 2000 to your desired loading duration in milliseconds
+  }, []);
+
   return (
     <div style={{ marginTop: '5px' }}>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <h2>{categoryName}</h2>
       </div>
       <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
-        {items.map((item) => (
-          <div key={item.id} style={{ marginBottom: '20px', padding: '20px', border: '1px solid #ccc', borderRadius: '8px', backgroundColor: '#424442', flex: '0 0 calc(33.33% - 20px)', margin: '10px', minWidth: '250px' }}>
-            <h3>{item.itemName}</h3>
-            <p style={{color:'white'}}><strong>Category:</strong> {item.categoryName}</p>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-              <img src={item.itemImage} alt={item.itemName} style={{ width: '100px', height: '100px', borderRadius: '5px', marginRight: '20px' }} />
-              <div>
-                <p><strong>Description:</strong> {item.itemDescription}</p>
-                <p><strong>Price:</strong> K{item.itemPrice}</p>
+        {loadingItems ? (
+          <div style={{ textAlign: 'center', width: '100%' }}>
+            <FontAwesomeIcon icon={faSpinner} spin size="3x" style={{ color: 'white' }} /> {/* Display spinner icon while loading */}
+          </div>
+        ) : (
+          items.map((item) => (
+            <div
+              key={item.id}
+              style={{
+                marginBottom: '20px',
+                padding: '20px',
+                border: '1px solid #ccc',
+                borderRadius: '8px',
+                backgroundColor: '#424442',
+                flex: '0 0 calc(33.33% - 20px)',
+                margin: '10px',
+                minWidth: '250px',
+                position: 'relative',
+                overflow: 'hidden',
+              }}
+              onMouseEnter={() => setSelectedItem(item)}
+              onMouseLeave={() => setSelectedItem(null)}
+            >
+              <div style={{ position: 'relative', overflow: 'hidden' }}>
+                <img src={item.itemImage} alt={item.itemName} style={{ width: '100%', height: 'auto', borderRadius: '5px', transition: 'transform 0.3s ease-in-out' }} />
+                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', opacity: selectedItem === item ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}>
+                  <h3 style={{ color: 'white', fontSize: '20px', margin: 0 }}>{item.itemName}</h3>
+                  <p style={{ color: 'white', fontSize: '16px', margin: '5px 0' }}>Price: K{item.itemPrice}</p>
+                  <button onClick={() => onBuyConfirmation(item)} style={{ fontSize: '16px', padding: '8px 16px', backgroundColor: 'white', color: 'black', border: 'none', cursor: 'pointer', borderRadius: '5px', marginTop: '10px', display: selectedItem === item ? 'block' : 'none' }}>Buy Now</button>
+                </div>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', marginTop: '10px' }}>
+                <div>
+                  <p style={{ color: 'white', fontSize: '14px', margin: '5px 0' }}><strong>D E S C R I P T I O N:</strong> {item.itemDescription}</p>
+                  <p style={{ color: 'white', fontSize: '14px', margin: '5px 0' }}><strong>C A T E G R O R Y:</strong> {item.categoryName}</p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        )}
       </div>
     </div>
   );
