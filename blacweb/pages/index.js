@@ -99,7 +99,7 @@ const Index = () => {
       <div style={{
         marginTop: '40px',
         height: 'fit-content',
-        backgroundImage: "url('/images/4.jpg')",
+        backgroundImage: "url('/images/fashh.jpg')",
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         color: 'white'
