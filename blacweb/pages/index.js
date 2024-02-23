@@ -5,7 +5,7 @@ import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg
 import { db } from '../utils/firebaseconfig';
 import { collection, getDocs } from 'firebase/firestore';
 import Navbar from "../components/Navbar";
-
+import Head from "next/head";
 const Index = () => {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -72,7 +72,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-black" style={{ backgroundColor: '#92928E', }}>
-      <Navbar />
+      <Head>
+        {/* Add AdSense script to the Head section */}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5867454772567796" crossOrigin="anonymous"></script>
+      </Head>
+  <Navbar />
       <div style={{
         color: 'white',
         backgroundImage: "url('/images/hi.jpg')",
