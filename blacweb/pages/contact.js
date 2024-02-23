@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarker, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import Navbar from '@/components/Navbar';
 import { images } from '@/next.config';
-
+import Head from 'next/head';
 const ContactUsPage = () => {
   // Define sharedContainer separately
   const sharedContainer = {
@@ -14,6 +14,10 @@ const ContactUsPage = () => {
 
   return (
     <div style={styles.container}>
+     <Head>
+        {/* Add AdSense script to the Head section */}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5867454772567796" crossOrigin="anonymous"></script>
+      </Head>
       <Navbar />
       <div style={styles.innerContainer}>
         <div style={styles.infoAndFormContainer}>
