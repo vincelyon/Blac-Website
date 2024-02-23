@@ -1,9 +1,13 @@
 import React from 'react';
 import Navbar from '@/components/Navbar'; // Assuming this component exists
-
+import Head from 'next/head';
 const AboutUsPage = () => {
   return (
     <div style={styles.container}>
+      <Head>
+        {/* Add AdSense script to the Head section */}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5867454772567796" crossOrigin="anonymous"></script>
+      </Head>
       <Navbar />
       <div style={styles.innerContainer}>
         <div style={styles.aboutContainer}>
